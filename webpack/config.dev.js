@@ -202,9 +202,10 @@
 
 // module.exports = config
 
+const fs = require('fs')
+const path = require('path')
 const { Rewriter, Analyzer } = require('@css-blocks/jsx')
 const { CssBlocksPlugin } = require('@css-blocks/webpack')
-
 const cssBlocksRewriter = require('@css-blocks/jsx/dist/src/transformer/babel')
 
 const jsxCompilationOptions = {
@@ -213,19 +214,27 @@ const jsxCompilationOptions = {
     rewriteIdents: true,
     mergeDeclarations: true,
     removeUnusedStyles: true,
-    conflictResolution: true
+    conflictResolution: true,
+    enabled: false
   }
+}
+
+const appDirectory = fs.realpathSync(process.cwd())
+const resolveApp = relativePath => path.resolve(appDirectory, relativePath)
+
+const paths = {
+  appIndexJs: resolveApp('./src/index.js')
 }
 
 const rewriter = new Rewriter()
 const analyzer = new Analyzer(
-  './src/index.js',
+  paths.appIndexJS,
   jsxCompilationOptions
 )
 
 module.exports = {
   mode: 'development',
-  entry: ['./src/index.js'],
+  entry: [paths.appIndexJs],
   module: {
     rules: [
       {
@@ -261,12 +270,20 @@ module.exports = {
     ]
   },
   plugins: [
+    // new CssBlocksPlugin({
+    //   analyzer,
+    //   outputCssFile: 'bundle.css',
+    //   compilationOptions: jsxCompilationOptions.compilationOptions,
+    //   optimization: jsxCompilationOptions.optimization
+    // })
     new CssBlocksPlugin({
+      name: 'css-blocks',
+      outputCssFile: 'my-output-file.css',
       analyzer,
-      outputCssFile: 'bundle.css',
       compilationOptions: jsxCompilationOptions.compilationOptions,
       optimization: jsxCompilationOptions.optimization
     })
+
   ],
   resolve: {
     extensions: ['.js', '.jsx']
@@ -276,6 +293,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    port: 8000
   }
 }
