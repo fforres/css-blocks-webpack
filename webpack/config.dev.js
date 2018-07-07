@@ -12,10 +12,10 @@ const jsxCompilationOptions = {
     conflictResolution: true
   }
 }
-
+const distFolder = path.resolve(__dirname, '../dist')
 const rewriter = new Rewriter()
 const analyzer = new Analyzer(
-  path.resolve(__dirname, '../src/dist'),
+  __dirname + '/src/index.jsx',
   jsxCompilationOptions
 )
 
@@ -58,7 +58,7 @@ module.exports = {
   plugins: [
     new CssBlocksPlugin({
       analyzer,
-      outputCssFile: path.resolve(__dirname, '../dist/bundle.css'),
+      outputCssFile: 'bundle.css',
       compilationOptions: jsxCompilationOptions.compilationOptions,
       optimization: jsxCompilationOptions.optimization
     })
@@ -67,10 +67,11 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: distFolder,
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    port: 3000
   }
 }
