@@ -866,7 +866,7 @@ module.exports = __webpack_require__(13);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-var _react=__webpack_require__(2);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(17);var _reactDom2=_interopRequireDefault(_reactDom);var _Button=__webpack_require__(26);var _Button2=_interopRequireDefault(_Button);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}_reactDom2.default.render(_react2.default.createElement('div',{className:styles},'Hello CSS Blocks! ',_react2.default.createElement(_Button2.default,null)),document.getElementById('app'));
+var _react=__webpack_require__(2);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(17);var _reactDom2=_interopRequireDefault(_reactDom);var _Button=__webpack_require__(26);var _Button2=_interopRequireDefault(_Button);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}_reactDom2.default.render(_react2.default.createElement('div',{className:'a'},'Hello CSS Blocks! ',_react2.default.createElement(_Button2.default,null)),document.getElementById('app'));
 
 /***/ }),
 /* 14 */
@@ -20358,7 +20358,7 @@ module.exports = camelize;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(2);var _react2=_interopRequireDefault(_react);var _objStr=__webpack_require__(27);var _objStr2=_interopRequireDefault(_objStr);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _defineProperty(obj,key,value){if(key in obj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true});}else{obj[key]=value;}return obj;}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var Button=function(_Component){_inherits(Button,_Component);function Button(){_classCallCheck(this,Button);var _this=_possibleConstructorReturn(this,(Button.__proto__||Object.getPrototypeOf(Button)).call(this));_this.state={isActive:false};return _this;}_createClass(Button,[{key:'toggleIsActive',value:function toggleIsActive(){this.setState({isActive:!this.state.isActive});}},{key:'render',value:function render(){var _objstr;var style=(0,_objStr2.default)((_objstr={},_defineProperty(_objstr,styles,true),_defineProperty(_objstr,styles.active(),this.state.isActive),_objstr));return _react2.default.createElement('button',{className:style,onClick:this.toggleIsActive.bind(this)},this.state.isActive?'Active':'Inactive');}}]);return Button;}(_react.Component);exports.default=Button;
+Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=__webpack_require__(2);var _react2=_interopRequireDefault(_react);var _objStr=__webpack_require__(27);var _objStr2=_interopRequireDefault(_objStr);var _runtime=__webpack_require__(28);var _runtime2=_interopRequireDefault(_runtime);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var Button=function(_Component){_inherits(Button,_Component);function Button(){_classCallCheck(this,Button);var _this=_possibleConstructorReturn(this,(Button.__proto__||Object.getPrototypeOf(Button)).call(this));_this.state={isActive:false};return _this;}_createClass(Button,[{key:'toggleIsActive',value:function toggleIsActive(){this.setState({isActive:!this.state.isActive});}},{key:'render',value:function render(){return _react2.default.createElement('button',{className:(0,_runtime2.default)('b',[1,1,2,this.state.isActive,1,0,'c',0]),onClick:this.toggleIsActive.bind(this)},this.state.isActive?'Active':'Inactive');}}]);return Button;}(_react.Component);exports.default=Button;
 
 /***/ }),
 /* 27 */
@@ -20376,6 +20376,145 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	}
 	return cls;
 });;
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var e = function (m) { throw new Error(m); };
+var toStr = function (v) { return typeof v === "symbol" ? v.toString() : "" + v; };
+var num = function (v) { return typeof v[0] === "number" ? (v.shift()) : e("not a number: " + toStr(v[0])); };
+var str = function (v) { return toStr(v.shift()); };
+var truthyString = function (v) {
+    var s = v.shift();
+    if (!s && s !== 0)
+        return;
+    return s.toString();
+};
+var bool = function (v) { return !!v.shift(); };
+function c(staticClasses, stack) {
+    if (Array.isArray(staticClasses)) {
+        stack = staticClasses;
+        staticClasses = "";
+    }
+    if (!stack) {
+        return staticClasses;
+    }
+    var sources = [];
+    var classes = [];
+    var nSources = num(stack);
+    var nOutputs = num(stack);
+    var canSetSource = true;
+    var abort = function () { return canSetSource = false; };
+    var isSourceSet = function (n) { return sources[n]; };
+    var setSource = function (n) { if (canSetSource)
+        sources[n] = true; };
+    if (staticClasses.length > 0) {
+        classes.push(staticClasses);
+    }
+    while (nSources-- > 0) {
+        sourceExpr(stack, isSourceSet, setSource, abort);
+        canSetSource = true;
+    }
+    while (nOutputs-- > 0) {
+        var c_1 = str(stack);
+        if (boolExpr(stack, isSourceSet))
+            classes.push(c_1);
+    }
+    return classes.join(" ");
+}
+exports.default = c;
+function sourceExpr(stack, isSourceSet, setSource, abort) {
+    var enforceSwitch = true;
+    var type = num(stack);
+    if (type & 1) {
+        var numDeps = num(stack);
+        while (numDeps-- > 0) {
+            var depIndex = num(stack);
+            if (!isSourceSet(depIndex))
+                enforceSwitch = abort();
+        }
+    }
+    if (type & 2) {
+        if (!bool(stack))
+            abort();
+    }
+    if (type & 4) {
+        var nValues = num(stack);
+        var ifFalsy = num(stack);
+        var value = truthyString(stack);
+        if (value === undefined) {
+            switch (ifFalsy) {
+                case 2:
+                    value = str(stack);
+                    break;
+                case 0:
+                    if (enforceSwitch)
+                        e("string expected");
+                    break;
+                case 1:
+                    abort();
+                    break;
+                default:
+                    e("wtf");
+            }
+        }
+        while (nValues-- > 0) {
+            var matchValue = str(stack);
+            var nSources = num(stack);
+            while (nSources-- > 0) {
+                value === matchValue ? setSource(num(stack)) : num(stack);
+            }
+        }
+    }
+    else if (type === 0) {
+        var condition = bool(stack);
+        var nTrue = num(stack);
+        while (nTrue-- > 0) {
+            condition ? setSource(num(stack)) : num(stack);
+        }
+        var nFalse = num(stack);
+        while (nFalse-- > 0) {
+            condition ? num(stack) : setSource(num(stack));
+        }
+    }
+    else {
+        var nSources = num(stack);
+        while (nSources-- > 0) {
+            setSource(num(stack));
+        }
+    }
+}
+function boolExpr(stack, isSourceSet) {
+    var result;
+    var type = num(stack);
+    switch (type) {
+        case -1:
+            return !boolExpr(stack, isSourceSet);
+        case -3:
+            var nAnds = num(stack);
+            result = true;
+            while (nAnds-- > 0) {
+                var nextResult = boolExpr(stack, isSourceSet);
+                result = result && nextResult;
+            }
+            return result;
+        case -2:
+            var nOrs = num(stack);
+            result = false;
+            while (nOrs-- > 0) {
+                var nextResult = boolExpr(stack, isSourceSet);
+                result = result || nextResult;
+            }
+            return result;
+        default:
+            return isSourceSet(type);
+    }
+}
 
 
 /***/ })

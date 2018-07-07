@@ -1,5 +1,0 @@
-C:\Users\felip\Github\css-blocks-webpack\src\index.block.css:5:1 [removeUnusedStyles] Removed rule with selector ".index__unusedStyle" because no element found that matches .index__unusedStyle.
-C:\Users\felip\Github\css-blocks-webpack\src\index.block.css:9:1 [removeUnusedStyles] Removed rule with selector ".index--test" because no element found that matches .index--test.
-C:\Users\felip\Github\css-blocks-webpack\src\index.block.css:1:1 [rewriteIdents] Rewrote selector's idents from ".index" to ".a".
-C:\Users\felip\Github\css-blocks-webpack\src\Button.block.css:1:1 [rewriteIdents] Rewrote selector's idents from ".Button" to ".b".
-C:\Users\felip\Github\css-blocks-webpack\src\Button.block.css:6:1 [rewriteIdents] Rewrote selector's idents from ".Button--active" to ".c".

@@ -1,6 +1,6 @@
 const { Rewriter, Analyzer } = require('@css-blocks/jsx')
 const { CssBlocksPlugin } = require('@css-blocks/webpack')
-
+const path = require('path')
 const cssBlocksRewriter = require('@css-blocks/jsx/dist/src/transformer/babel')
 
 const jsxCompilationOptions = {
@@ -12,7 +12,7 @@ const jsxCompilationOptions = {
     conflictResolution: true
   }
 }
-
+const distFolder = path.resolve(__dirname, '../dist')
 const rewriter = new Rewriter()
 const analyzer = new Analyzer(
   __dirname + '/src/index.jsx',
@@ -67,7 +67,7 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   output: {
-    path: __dirname + '/dist',
+    path: distFolder,
     filename: 'bundle.js'
   },
   devServer: {
